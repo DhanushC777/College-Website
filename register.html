@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="signup_style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link href="https://fonts.googleapis.com/css?family=Titillium+Web:400,300,600" rel="stylesheet" type="text/css" />
+</head>
+
+<body class="body">
+    <div class="login-page">
+        <div class="form">
+            <form id="signupForm" onsubmit="return validateSignUpForm()">
+                <h1><i>SIGN UP</i></h1>
+
+                
+                <input type="text" id="fullName" placeholder="Full Name" required />
+
+                
+                <input type="email" id="email" placeholder="Email Address" required />
+
+                
+                <input type="text" id="username" placeholder="Pick a Username" required minlength="3" />
+
+                
+                <input type="password" id="password" placeholder="Set a Password" required minlength="6" />
+                <i class="fas fa-eye" onclick="togglePasswordVisibility('password')"></i>
+
+                <br><br>
+                <button type="submit">SIGN UP</button>
+                <p class="message"></p>
+            </form>
+
+            <form class="login-form">
+                <button type="button" onclick="window.location.href='login.html'">Already have an account?</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function togglePasswordVisibility(id) {
+            const passwordField = document.getElementById(id);
+            const icon = document.querySelector(".fas");
+
+            if (passwordField.type === "password") {
+                passwordField.type = "text";
+                icon.classList.remove("fa-eye");
+                icon.classList.add("fa-eye-slash");
+            } else {
+                passwordField.type = "password";
+                icon.classList.remove("fa-eye-slash");
+                icon.classList.add("fa-eye");
+            }
+        }
+
+        function validateSignUpForm() {
+            const fullName = document.getElementById("fullName").value.trim();
+            const email = document.getElementById("email").value.trim();
+            const username = document.getElementById("username").value.trim();
+            const password = document.getElementById("password").value;
+            const messageElement = document.querySelector(".message");
+
+            // Simple validation checks
+            if (!fullName) {
+                messageElement.textContent = "Full Name is required.";
+                return false;
+            }
+            if (!email) {
+                messageElement.textContent = "Email is required.";
+                return false;
+            }
+            if (username.length < 3) {
+                messageElement.textContent = "Username must be at least 3 characters long.";
+                return false;
+            }
+            if (password.length < 6) {
+                messageElement.textContent = "Password must be at least 6 characters long.";
+                return false;
+            }
+
+            // Clear message if validation passes
+            messageElement.textContent = "";
+            return true; // Allow form submission
+        }
+    </script>
+</body>
+</html>

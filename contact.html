@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lovely Professional University</title>
+    <link rel="icon" href="Images/logo.png" type="image/x-icon" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Poppins:wght@100;200&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@10..48,200&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <section class="sub-header">
+      <nav>
+        <a href="home.html"><img src="/images/piru.png" alt="" /></a>
+        <div class="nav-links" id="navLinks">
+          <i class="fa fa-times" onclick="hideMenu()"></i>
+          <ul>
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="about.html">ABOUT</a></li>
+            <li><a href="courses.html">COURSES</a></li>
+            <li><a href="blog.html">BLOGS</a></li>
+            <li><a href="contact.html">CONTACT</a></li>
+          </ul>
+        </div>
+        <i class="fa fa-bars" onclick="showMenu()"></i>
+      </nav>
+      <h1>Contact Us</h1>
+    </section>
+
+    <!-- ---------------------contact us-------------------- -->
+
+    <section class="location">
+      <iframe
+        src="//www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d46631.62469810923!2d75.69223614800173!3d31.256212027441492!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1729939413017!5m2!1sen!2sin"
+        width="600"
+        height="450"
+        style="border: 0"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+      ></iframe>
+    </section>
+
+    <section class="contact-us">
+      <div class="row">
+        <div class="contact-col">
+          <div>
+            <i class="fa fa-home"></i>
+            <span>
+              <h5>LPU</h5>
+              <p>Punjab</p>
+            </span>
+          </div>
+
+          <div>
+            <i class="fa fa-phone"></i>
+            <span>
+              <h5>+1 8491817532</h5>
+              <p>call us for queries</p>
+            </span>
+          </div>
+
+          <div>
+            <i class="fa fa-envelope-o"></i>
+            <span>
+              <h5>lpuofficial@gmail.com</h5>
+              <p>Email us for queries</p>
+            </span>
+          </div>
+        </div>
+
+        <div class="contact-col">
+          <form id="contact-form">
+              <input type="text" name="name" placeholder="Enter your name" required/>
+              <input type="email" name="email" placeholder="Enter your email" required/>
+              <input type="text" name="subject" placeholder="Enter your subject" required/>
+              <textarea name="message" placeholder="Message" rows="10" required></textarea>
+              <button type="submit" class="hero-btn red-btn">Send Message</button>
+          </form>
+      </div>
+      
+      <script>
+      document.getElementById('contact-form').addEventListener('submit', function(event) {
+          event.preventDefault();
+      
+          // Collect form data
+          const formData = new FormData(this);
+      
+          // Send form data using AJAX
+          const xhr = new XMLHttpRequest();
+          xhr.open('POST', 'form_handler.php', true);
+          xhr.onreadystatechange = function() {
+              if (xhr.readyState === XMLHttpRequest.DONE) {
+                  if (xhr.status === 200) {
+                      alert('Message sent successfully!');
+                      // You can update the UI as needed here
+                  } else {
+                      alert('Error sending message.');
+                  }
+              }
+          };
+          xhr.send(formData);
+      });
+      </script>
+      
+    </section>
+    <!-- ----------footer---------------- -->
+
+    <section class="footer">
+      <h1>About Us</h1>
+      <div class="footer-intro">
+        <p>
+          "We are passionate developers dedicated to crafting innovative
+          solutions that merge technology with creativity. <br />Our mission is
+          to build seamless experiences that redefine possibilities."
+        </p>
+      </div>
+      <div class="icons">
+        <a
+          href="https://www.facebook.com/profile.php?id=100094296491449"
+          class="fa fa-facebook"
+        ></a>
+        <a href="https://twitter.com/RANIT_MANIK" class="fa fa-twitter"></a>
+        <a
+          href="https://www.instagram.com/ranit_manik_/"
+          class="fa fa-instagram"
+        ></a>
+        <a
+          href="https://www.linkedin.com/in/ranit-manik/"
+          class="fa fa-linkedin"
+        ></a>
+      </div>
+      <p>Made with <i class="fa fa-heart-o"></i> by DHANUSH</p>
+      <p>© DHANUSH</p>
+    </section>
+
+    <!--Javascript for Toggle Menu-->
+    <script>
+      var navLinks = document.getElementById("navLinks");
+
+      function showMenu() {
+        navLinks.style.right = "0";
+      }
+
+      function hideMenu() {
+        navLinks.style.right = "-200px";
+      }
+    </script>
+  </body>
+</html>

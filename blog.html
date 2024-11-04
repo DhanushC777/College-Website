@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lovely Professional University</title>
+    <link rel="icon" href="Images/logo.png" type="image/x-icon" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Poppins:wght@100;200&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@10..48,200&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <section class="sub-header">
+      <nav>
+        <a href="home.html"><img src="/images/piru.png" alt="" /></a>
+        <div class="nav-links" id="navLinks">
+          <i class="fa fa-times" onclick="hideMenu()"></i>
+          <ul>
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="about.html">ABOUT</a></li>
+            <li><a href="courses.html">COURSES</a></li>
+            <li><a href="blog.html">BLOGS</a></li>
+            <li><a href="contact.html">CONTACT</a></li>
+          </ul>
+        </div>
+        <i class="fa fa-bars" onclick="showMenu()"></i>
+      </nav>
+      <h1>Our Certificates and online Programs for 2024</h1>
+    </section>
+
+    <!-- ----------blog post page---------------- -->
+
+    <section class="blog-content">
+      <div class="row">
+        <div class="blog-left">
+          <img src="/images/cerifi.jpg" alt="" />
+          <h1>About Our Certificate Programs for 2024</h1>
+          <p>
+            Welcome to the distinguished Certificate Program at LPU Engineering
+            College! This all-encompassing educational journey is meticulously
+            designed for driven individuals with a passion for engineering,
+            aiming to amplify their skill set and understanding in the
+            ever-evolving realm of engineering. Our program is meticulously
+            curated to offer an array of benefits, catering to the needs of
+            aspiring engineers.
+            <br />
+            <br />
+            At the heart of our program lies a faculty composed of seasoned
+            experts, each dedicated to nurturing your growth. This expertise is
+            coupled with a curriculum that is not just forward-looking, but at
+            the forefront of technological advancements. With a focus on
+            practicality, hands-on projects constitute a pivotal component of
+            your learning experience, ensuring you are adept at applying
+            theoretical concepts in real-world scenarios.
+            <br />
+            <br />
+            In recognition of the symbiotic relationship between academia and
+            industry, we've forged collaborations with prominent industry names.
+            This translates into opportunities for you to gain insights directly
+            from professionals and to work on industry-aligned projects. Our
+            state-of-the-art facilities provide the perfect canvas for you to
+            turn your ideas into tangible innovations.
+            <br />
+            <br />
+            We wholeheartedly invite you to join us at Lovely Professional University
+            and become an integral part of shaping your own engineering future.
+          </p>
+
+          <div class="comment-box">
+    <h3>Leave a comment</h3>
+    <form class="comment-form" id="comment-form">
+        <input type="text" name="name" placeholder="Enter Name" required/>
+        <input type="email" name="email" placeholder="Enter Email" required/>
+        <textarea name="message" placeholder="Enter Comment" rows="5" required></textarea>
+        <button type="submit" class="hero-btn red-btn">Post Comment</button>
+    </form>
+</div>
+
+<script>
+document.getElementById('comment-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    // Collect form data
+    const formData = new FormData(this);
+
+    // Send form data using AJAX
+    const xhr = new XMLHttpRequest();
+    xhr.open('POST', 'form_handler.php', true);
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState === XMLHttpRequest.DONE) {
+            if (xhr.status === 200) {
+                alert('Comment posted successfully!');
+                // You can update the UI as needed here
+            } else {
+                alert('Error posting comment.');
+            }
+        }
+    };
+    xhr.send(formData);
+});
+</script>
+
+        </div>
+        <div class="blog-right">
+          <h3>Post Categories</h3>
+          <div>
+            <span>Computer Science</span>
+            <span>21</span>
+          </div>
+          <div>
+            <span>Data Science</span>
+            <span>28</span>
+          </div>
+          <div>
+            <span>Machine Learning</span>
+            <span>21</span>
+          </div>
+          <div>
+              <span>Information Technology</span>
+              <span>20</span>
+            </div>
+            <div>
+              <span>Chemical Engineering</span>
+              <span>21</span>
+            </div>
+          <div>
+            <span>Civil Engineering</span>
+            <span>21</span>
+          </div>
+          <div>
+            <span>Mechanical Engineering</span>
+            <span>21</span>
+          </div>
+          <div>
+            <span>Electrical Engineering</span>
+            <span>21</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ----------footer---------------- -->
+
+    <section class="footer">
+      <h1>About Us</h1>
+      <div class="footer-intro">
+        <p>
+          "We are passionate developers dedicated to crafting innovative
+          solutions that merge technology with creativity. <br />Our mission is
+          to build seamless experiences that redefine possibilities."
+        </p>
+      </div>
+      <div class="icons">
+        <a
+          href="https://www.facebook.com/profile.php?id=100094296491449"
+          class="fa fa-facebook"
+        ></a>
+        <a href="https://twitter.com/RANIT_MANIK" class="fa fa-twitter"></a>
+        <a
+          href="https://www.instagram.com/ranit_manik_/"
+          class="fa fa-instagram"
+        ></a>
+        <a
+          href="https://www.linkedin.com/in/ranit-manik/"
+          class="fa fa-linkedin"
+        ></a>
+      </div>
+      <p>Made with <i class="fa fa-heart-o"></i> by DHANUSH</p>
+      <p>© 2024 DHANUSH</p>
+    </section>
+
+    <!--Javascript for Toggle Menu-->
+    <script>
+      var navLinks = document.getElementById("navLinks");
+
+      function showMenu() {
+        navLinks.style.right = "0";
+      }
+
+      function hideMenu() {
+        navLinks.style.right = "-200px";
+      }
+    </script>
+  </body>
+</html>

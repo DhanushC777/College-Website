@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lovely Professional University</title>
+    <link rel="icon" href="Images/logo.png" type="image/x-icon" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Poppins:wght@100;200&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@10..48,200&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <section class="sub-header">
+      <nav>
+        <a href="home.html"><img src="/images/piru.png" alt="" /></a>
+        <div class="nav-links" id="navLinks">
+          <i class="fa fa-times" onclick="hideMenu()"></i>
+          <ul>
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="about.html">ABOUT</a></li>
+            <li><a href="courses.html">COURSES</a></li>
+            <li><a href="blog.html">BLOGS</a></li>
+            <li><a href="contact.html">CONTACT</a></li>
+          </ul>
+        </div>
+        <i class="fa fa-bars" onclick="showMenu()"></i>
+      </nav>
+      <h1>Our Courses</h1>
+    </section>
+
+    <!-- ------------courses------------- -->
+
+    <section class="course">
+      <h1>Course We Offer</h1>
+      <div class="course-intro">
+        <p>
+          Explore our courses and programs designed to nurture your passion for
+          technology and equip you with the skills to shape the future.
+        </p>
+        </a>
+      </div>
+      <div class="row">
+        <div class="course-col">
+          <h3>B.TECH</h3>
+          <p>
+            The B.Tech program is designed to provide students with a strong
+            foundation in engineering principles and practical skills. It offers
+            a comprehensive understanding of various engineering disciplines,
+            allowing students to specialize in many areas.
+          </p>
+        </div>
+        <div class="course-col">
+          <h3>M.TECH</h3>
+          <p>
+            The M.Tech program is a postgraduate degree that focuses on advanced
+            engineering concepts and specialized knowledge. It enables students
+            to delve deeper into their chosen engineering field and undertake
+            research projects.
+          </p>
+        </div>
+        <div class="course-col">
+          <h3>RESEARCH</h3>
+          <p>
+            Our college also offers research opportunities for those driven to
+            advance the boundaries of engineering knowledge. These programs
+            provide a platform for students to engage in high-impact research
+            projects, collaborate with esteemed faculty.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- --------------facilities---------------- -->
+
+    <section class="facilities">
+      <h1>Our Facilities</h1>
+      <div class="facilities-intro">
+        <p>
+          The DCU campus is equipped with state-of-the-art facilities and
+          resources to support the learning and research needs of our students.
+        </p>
+      </div>
+      <div class="row">
+        <div class="facilities-col">
+          <img src="/images/library.jpg" alt="" />
+          <h3>World Class Library</h3>
+          <p>
+            Our library is one of the largest and most comprehensive in the
+            country.
+          </p>
+        </div>
+        <div class="facilities-col">
+          <img src="/images/ground lpu.jpg" alt="" />
+          <h3>Largest Playground</h3>
+          <p>
+            The campus has a large and well-maintained playground for students
+            to enjoy.
+          </p>
+        </div>
+
+        <div class="facilities-col">
+          <img src="/images/food.jpg" alt="" />
+          <h3>Tasty and Healthy Food</h3>
+          <p>
+            The campus has a well-equipped cafeteria that serves a variety of
+            nutritious and delicious meals.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ----------footer---------------- -->
+
+    <section class="footer">
+      <h1>About Us</h1>
+      <div class="footer-intro">
+        <p>
+          "We are passionate developers dedicated to crafting innovative
+          solutions that merge technology with creativity. <br />Our mission is
+          to build seamless experiences that redefine possibilities."
+        </p>
+      </div>
+      <div class="icons">
+        <a
+          href="https://www.facebook.com/profile.php?id=100094296491449"
+          class="fa fa-facebook"
+        ></a>
+        <a href="https://twitter.com/RANIT_MANIK" class="fa fa-twitter"></a>
+        <a
+          href="https://www.instagram.com/ranit_manik_/"
+          class="fa fa-instagram"
+        ></a>
+        <a
+          href="https://www.linkedin.com/in/ranit-manik/"
+          class="fa fa-linkedin"
+        ></a>
+      </div>
+      <p>Made with <i class="fa fa-heart-o"></i> by DHANUSH</p>
+      <p>DHANUSH</p>
+    </section>
+
+    <!--Javascript for Toggle Menu-->
+    <script>
+      var navLinks = document.getElementById("navLinks");
+
+      function showMenu() {
+        navLinks.style.right = "0";
+      }
+
+      function hideMenu() {
+        navLinks.style.right = "-200px";
+      }
+    </script>
+  </body>
+</html>

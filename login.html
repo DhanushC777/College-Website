@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" href="styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="login_style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link href="https://fonts.googleapis.com/css?family=Titillium+Web:400,300,600" rel="stylesheet" type="text/css" />
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+</head>
+
+<body class="body">
+    <div class="login-page">
+        <div class="form">
+            <form id="loginForm" onsubmit="return validateLoginForm()" action="index.html" method="get">
+                <h1><i>LOGIN</i></h1>
+
+                
+                <input type="text" id="username" placeholder="&#xf007; username" required />
+
+                
+                <input type="password" id="password" placeholder="&#xf023; password" required minlength="6" />
+                <i class="fas fa-eye" onclick="togglePasswordVisibility('password')"></i>
+
+                <br><br>
+                <button type="submit">LOGIN</button>
+                <p class="message"></p>
+            </form>
+
+            <form class="login-form">
+                <button type="button" onclick="window.location.href='register.html'">SIGN UP</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function togglePasswordVisibility(id) {
+            const passwordField = document.getElementById(id);
+            const icon = document.querySelector(".fas");
+
+            if (passwordField.type === "password") {
+                passwordField.type = "text";
+                icon.classList.remove("fa-eye");
+                icon.classList.add("fa-eye-slash");
+            } else {
+                passwordField.type = "password";
+                icon.classList.remove("fa-eye-slash");
+                icon.classList.add("fa-eye");
+            }
+        }
+
+        function validateLoginForm() {
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+            const messageElement = document.querySelector(".message");
+
+            if (!username) {
+                messageElement.textContent = "Username is required.";
+                return false;
+            }
+
+            if (password.length < 6) {
+                messageElement.textContent = "Password must be at least 6 characters long.";
+                return false;
+            }
+
+            messageElement.textContent = ""; // Clear any previous messages
+            return true; // Allow form submission
+        }
+    </script>
+</body>
+</html>
